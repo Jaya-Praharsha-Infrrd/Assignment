@@ -1,0 +1,11 @@
+user_id,username,login_date,session_duration,activity_type
+1,alice,2024-01-01,35,login
+2,bob,2024-01-01,120,upload
+1,alice,2024-01-02,60,download
+3,charlie,2024-01-02,15,login
+2,bob,2024-01-03,90,download
+4,diana,2024-01-03,200,upload
+3,charlie,2024-01-04,,login
+5,eve,invalid-date,45,login
+1,alice,2024-01-05,thirty,upload
+
