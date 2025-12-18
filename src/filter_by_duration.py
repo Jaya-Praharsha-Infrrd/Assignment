@@ -26,7 +26,7 @@ def filter_by_duration(file_path, min_duration, export=None):
     Raises:
         SystemExit: If the input file cannot be read or is missing required columns.
     """
-    # Validate that duration isn't a nonsensical negative number
+    # Validate that duration isn't a negative number
     if min_duration < 0:
         print("Error: Minimum duration cannot be negative.")
         sys.exit(1)
