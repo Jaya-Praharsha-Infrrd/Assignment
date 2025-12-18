@@ -20,7 +20,6 @@ class LoggerSingleton:
         handler.setFormatter(formatter)
 
         logger.addHandler(handler)
-        logger.propagate = False
 
         cls._instance = logger
         return logger
