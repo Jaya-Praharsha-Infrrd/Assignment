@@ -70,9 +70,6 @@ def filter_by_date_range(file_path, start_date_str, end_date_str, export=None):
                     print(f"Results exported to {export}")
                 except Exception as e:
                     print(f"Error exporting file: {e}")
-                # sep = "," if export.endswith(".csv") else "\t"
-                # result.to_csv(export, index=False, sep=sep)
-                # print(f"Results successfully exported to {export}")
 
     except Exception as e:
         print(f"An unexpected error occurred during processing: {e}")
