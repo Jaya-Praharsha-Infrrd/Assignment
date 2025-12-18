@@ -60,9 +60,19 @@ def filter_by_date_range(file_path, start_date_str, end_date_str, export=None):
             print(result.to_string(index=False))
 
             if export:
-                sep = "," if export.endswith(".csv") else "\t"
-                result.to_csv(export, index=False, sep=sep)
-                print(f"Results successfully exported to {export}")
+                if not (export.endswith(".csv") or export.endswith(".txt")):
+                    print("Error: Export file must be .csv or .txt")
+                    sys.exit(1)
+
+                try:
+                    sep = "," if export.endswith(".csv") else "\t"
+                    result.to_csv(export, index=False, sep=sep)
+                    print(f"Results exported to {export}")
+                except Exception as e:
+                    print(f"Error exporting file: {e}")
+                # sep = "," if export.endswith(".csv") else "\t"
+                # result.to_csv(export, index=False, sep=sep)
+                # print(f"Results successfully exported to {export}")
 
     except Exception as e:
         print(f"An unexpected error occurred during processing: {e}")

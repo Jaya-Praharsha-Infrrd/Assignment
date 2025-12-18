@@ -47,6 +47,9 @@ def search_by_username(file_path, username, export=None):
         print(result.to_string(index=False))
 
         if export:
+            if not (export.endswith(".csv") or export.endswith(".txt")):
+                print("Error: Export file must be .csv or .txt")
+                sys.exit(1)
             try:
                 sep = "," if export.endswith(".csv") else "\t"
                 result.to_csv(export, index=False, sep=sep)

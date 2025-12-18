@@ -53,6 +53,9 @@ def filter_by_duration(file_path, min_duration, export=None):
     else:
         print(result.to_string(index=False))
         if export:
+            if not (export.endswith(".csv") or export.endswith(".txt")):
+                print("Error: Export file must be .csv or .txt")
+                sys.exit(1)
             try:
                 sep = "," if export.endswith(".csv") else "\t"
                 result.to_csv(export, index=False, sep=sep)
